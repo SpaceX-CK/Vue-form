@@ -1,6 +1,6 @@
 # vue-project
 
-This template should help get you started developing with Vue 3 in Vite.
+This Form Demo developing with Vue 3 in Vite and Tailwind CSS.
 
 ## Recommended IDE Setup
 
@@ -37,3 +37,16 @@ npm run build
 ```sh
 npm run lint
 ```
+
+## Improvement Plan
+### Break Down Reusable Input into Components
+- Create a `BaseInput.vue` (and optionally `PasswordInput.vue`) to encapsulate repeated input logic.
+- Eliminates code duplication and ensures a consistent look-and-feel.
+
+### Extract Validation Logic into a Composable
+- Centralize validation rules in a `useFormValidation` composable.
+- Simplifies maintenance and enables easy reuse across multiple forms.
+
+### Consistent Layout Components
+- Wrap forms in a `FormContainer.vue` or similar layout component.
+- Separates layout styling from form logic for a cleaner, more modular codebase.
