@@ -86,15 +86,15 @@
             LOGIN SETUP MENU
           </h3>
           <div class="flex flex-col flex-md-row items-center justify-around my-3 text-black">
-            <label>
+            <label class="flex items-center gap-2">
               <input type="radio" v-model="form.loginOption" value="email" />
               Activate login via email
             </label>
-            <label class="border-none md:border-l-2 border-gray-200 pl-2">
+            <label class="flex items-center gap-2 border-none md:border-l-2 border-gray-200 pl-2">
               <input type="radio" v-model="form.loginOption" value="sms" />
               Activate login via SMS
             </label>
-            <label class="border-none md:border-l-2 border-gray-200 pl-2">
+            <label class="flex items-center gap-2 border-none md:border-l-2 border-gray-200 pl-2">
               <input type="radio" v-model="form.loginOption" value="disable" />
               Disable all
             </label>
@@ -262,5 +262,30 @@ input[type='number'] {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+/* Remove the default radio styling */
+input[type='radio'] {
+  -webkit-appearance: none; /* For Chrome / Safari */
+  appearance: none; /* For modern browsers */
+  width: 16px; /* Adjust to your icon size */
+  height: 16px;
+  background: url('@/assets/icons/circle.svg') no-repeat center/contain;
+  cursor: pointer;
+  margin-right: 6px; /* Spacing before label text, if desired */
+  border: none; /* No border needed */
+  outline: none;
+  margin: auto;
+  align-items: center;
+}
+
+/* When the radio is checked, swap to the checked SVG */
+input[type='radio']:checked {
+  background: url('@/assets/icons/circle-dot.svg') no-repeat center/contain;
+}
+
+/* (Optional) Add a focus style if desired */
+input[type='radio']:focus {
+  outline-offset: 2px;
 }
 </style>
